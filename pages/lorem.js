@@ -1,9 +1,14 @@
+import styled from 'styled-components';
 import Page from "../components/Page";
+
+const StyledBodyDiv = styled.div`
+  color: purple;
+`;
 
 const Lorem = () => (
   <div>
     <Page>
-      <div style={{ color: 'purple' }}>
+      <StyledBodyDiv>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
           aliquet rhoncus turpis eget congue. Cras congue est id eros egestas
@@ -127,7 +132,7 @@ const Lorem = () => (
           laoreet sem egestas. Vestibulum non ex consequat, egestas orci non,
           rhoncus arcu. Mauris sed odio accumsan nisl aliquet tincidunt.
         </p>
-      </div>
+      </StyledBodyDiv>
     </Page>
   </div>
 );

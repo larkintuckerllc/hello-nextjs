@@ -1,20 +1,25 @@
+import styled from 'styled-components';
 import Page from '../components/Page';
 
-const Home = () => (
+const StyledBodyDiv = styled.div`
+  text-align: center;
+`;
+const StyledResponsiveImg = styled.img`
+  width: 100%;
+  height: auto;
+`;
+
+const Index = () => (
   <div>
     <Page>
-      <div styles={{ textAlign: 'center' }}>
-        <img
+      <StyledBodyDiv>
+        <StyledResponsiveImg
           alt="cat"
           src="/static/cat.jpg"
-          styles={{
-            width: '100%',
-            height: "auto",
-          }}
         />
-      </div>
+      </StyledBodyDiv>
     </Page>
   </div>
 );
 
-export default Home;
+export default Index;

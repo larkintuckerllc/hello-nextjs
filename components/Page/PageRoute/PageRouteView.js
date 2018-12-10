@@ -1,7 +1,25 @@
 import PropTypes from 'prop-types';
 import { Layout, Menu } from 'antd';
+import styled from 'styled-components';
 
 const { Header, Content, Footer } = Layout;
+
+// Ant Design Menu component did not work with
+// styled-components
+
+const StyledContent = styled(Content)`
+  padding: 0px 50px;
+`;
+
+const StyledBodyDiv = styled.div`
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+`;
+
+const StyledFooter = styled(Footer)`
+  text-align: center;
+`;
 
 const PageRouteView = ({ children, onMenuSelect, pathname }) => (
   <Layout>
@@ -10,8 +28,8 @@ const PageRouteView = ({ children, onMenuSelect, pathname }) => (
         defaultSelectedKeys={[pathname]}
         mode="horizontal"
         onSelect={onMenuSelect}
-        style={{ lineHeight: '64px' }}
         theme="dark"
+        style={{ lineHeight: '64px' }}
       >
         <Menu.Item key="/">Home</Menu.Item>
         <Menu.Item key="/charta">ChartA</Menu.Item>
@@ -19,18 +37,14 @@ const PageRouteView = ({ children, onMenuSelect, pathname }) => (
         <Menu.Item key="/lorem">Lorem</Menu.Item>
       </Menu>
     </Header>
-    <Content style={{ padding: '0px 50px'}}>
-      <div style={{
-        background: '#fff',
-        padding: '24px',
-        minHeight: '280px',
-      }}>
+    <StyledContent>
+      <StyledBodyDiv>
         {children}
-      </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }}>
+      </StyledBodyDiv>
+    </StyledContent>
+    <StyledFooter>
       Footer
-    </Footer>
+    </StyledFooter>
   </Layout>
 );
 
