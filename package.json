@@ -11,6 +11,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "10.14.0"
+  },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.8.4",
